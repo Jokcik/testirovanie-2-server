@@ -19,6 +19,9 @@
         "ordered-imports": [
             false
         ],
+        "no-string-literal": [
+            false
+        ],
         "max-line-length": [
             true,
             150

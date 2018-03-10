@@ -3,7 +3,6 @@ import {environment as environmentProd} from './environment.prod';
 import {environment as environmentTest} from './environment.test';
 
 export default function() {
-  console.log('BLAAAAA');
   const ENV = process.env.NODE_ENV;
 
   if (ENV === 'prod') {
