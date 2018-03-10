@@ -31,12 +31,12 @@ describe('VkService', () => {
   });
 
   it('/users service', async () => {
-    server.use('*', (req, res, next) => res.send(JSON.stringify({response: 'users'})));
+    server.use('*', (req, res, next) => res.json({response: 'users'}));
     expect(await service.users('1,2,3')).toEqual({response: 'users'});
   });
 
   it('/friends service', async () => {
-    server.use('*', (req, res, next) => res.send(JSON.stringify({response: 'friends'})));
+    server.use('*', (req, res, next) => res.json({response: 'friends'}));
     expect(await service.friends(1)).toEqual({response: 'friends'});
   });
 });

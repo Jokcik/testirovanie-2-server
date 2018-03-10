@@ -38,7 +38,7 @@ describe('VkController', () => {
       const userId = '5';
       const result = {response: [{uid: userId, first_name: 'name'}]};
       jest.spyOn(service, 'friends').mockImplementation(id => ({res: result, id}));
-      expect(await controller.friends(userId)).toEqual({res: result, id: userId});
+      expect(await controller.friends(userId)).toEqual({res: result, id: +userId});
     });
   });
 
@@ -83,7 +83,7 @@ describe('VkController', () => {
       const userId = 5;
 
       const res = await request(server)
-        .get(`/vk/friends?userId=${userId}`)
+        .get(`/vk/friends?user_id=${userId}`)
         .set('Accept', 'application/json');
 
       expect(res.status).toEqual(200);

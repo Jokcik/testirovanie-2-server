@@ -12,7 +12,7 @@ export class VkController {
   }
 
   @Get('friends')
-  async friends(@Query('userId') userId: string): Promise<any> {
+  async friends(@Query('user_id') userId: string): Promise<any> {
     return await this.service.friends(+userId);
   }
 }
